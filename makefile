@@ -11,3 +11,19 @@ endif
 ifeq ($(push), true)
 	git subtree push --prefix=$(SUBTREE_PREFIX) $(REPO_URL) $(BRANCH)
 endif
+
+
+
+# Add subtree to a temporary directory and move it to the root
+add-subtree:
+	# Step 1: Add the subtree to a temporary directory
+	git subtree add --prefix=temp-subtree https://github.com/pooya-poi/child-subtree-test.git main --squash
+
+	# Step 2: Move the contents of the temporary directory to the root
+	git mv temp-subtree/* .
+	git rm -r temp-subtree
+
+	# Step 3: Commit the changes
+	git commit -m "Moved subtree contents to the root directory"
+
+	@echo "Subtree added and moved to the root directory successfully!"
