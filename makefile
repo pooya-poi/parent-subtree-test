@@ -21,7 +21,7 @@ add-subtree:
 
 	# Step 2: Move the contents of the temporary directory to the root
 	git mv temp-subtree/* .
-	git rm -rf temp-subtree
+	rm -rf temp-subtree
 
 	# Step 3: Commit the changes
 	git commit -m "Moved subtree contents to the root directory"
