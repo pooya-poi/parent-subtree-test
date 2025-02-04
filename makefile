@@ -1,6 +1,6 @@
 # variables
 REPO_URL=https://github.com/pooya-poi/child-subtree-test.git
-SUBTREE_PREFIX=shared-directory
+SUBTREE_PREFIX=src/shared-directory
 BRANCH=main
 
 # pull or push based on the 'pull' and 'push' variable:
